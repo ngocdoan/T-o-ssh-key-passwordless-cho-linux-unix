@@ -5,14 +5,14 @@ ssh-keygen -t rsa -b 2048
 Máy sẽ tạo ra 2 file:
 - id_rsa.pub: public key (ổ khóa)
 - id_rsa: private key (chìa khóa)
-# thêm ổ khóa vào danh sách được ủy quyền
+# Thêm ổ khóa vào danh sách được ủy quyền
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # Phân quyền
 chmod 600 ~/.ssh/authorized_keys
 # Sửa file cấu hình trên server
 sudo vi /etc/ssh/sshd_config
-# uncomment PubkeyAuthentication yes
-# :wq! để lưu lại
+uncomment PubkeyAuthentication yes
+:wq! để lưu lại
 # Restart sshd trên mac OS
 sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
