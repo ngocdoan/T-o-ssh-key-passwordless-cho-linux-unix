@@ -1,4 +1,6 @@
-# Tạo ssh-key passwordless cho Linux/Unix
+# Đăng nhập ssh trên máy server
+ssh user@ip.address -p portnumber
+# Tạo ssh-key passwordless cho Linux/Unix trên server
 ssh-keygen -t rsa -b 2048
 # Máy sẽ tạo ra 2 file:
 # - id_rsa.pub: public key (ổ khóa)
