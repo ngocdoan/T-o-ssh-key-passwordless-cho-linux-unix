@@ -2,13 +2,14 @@
 ssh user@ip.address -p portnumber
 # Tạo ssh-key passwordless cho Linux/Unix trên server
 ssh-keygen -t rsa -b 2048
-# Máy sẽ tạo ra 2 file:
-# - id_rsa.pub: public key (ổ khóa)
-# - id_rsa: private key (chìa khóa)
+Máy sẽ tạo ra 2 file:
+- id_rsa.pub: public key (ổ khóa)
+- id_rsa: private key (chìa khóa)
+# thêm ổ khóa vào danh sách được ủy quyền
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # Phân quyền
 chmod 600 ~/.ssh/authorized_keys
-# Sửa file cấu hình
+# Sửa file cấu hình trên server
 sudo vi /etc/ssh/sshd_config
 # uncomment PubkeyAuthentication yes
 # :wq! để lưu lại
@@ -26,7 +27,7 @@ eval `ssh-agent -s`
 # import ssh-key
 ssh-add -K /path/your-private-key
 # giờ chỉ việc chạy lệnh ssh user@ip.address -p portnumber, máy sẽ ko hỏi gì mà đăng nhập luôn
-# C2: Tạo file khai báo như sau trên máy client
+# C2: Tạo file khai báo như sau trên máy client (khi restart vẫn chạy phà phà)
 Host test1
 	HostName ip.address
 	Port portnumber
