@@ -14,6 +14,6 @@ sudo vi /etc/ssh/sshd_config
 sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 # Tải file private key về máy client
-scp -p (port) user@ip.address:/server/patch/id_rsa /client/patch/
+scp -p portnumber user@ip.address:/server/patch/id_rsa /client/patch/
 # Thực hiện đăng nhập bằng key đã tải về
-ssh -i /client/patch/id_rsa user@ip.address
+ssh -i /client/patch/id_rsa user@ip.address -p portnumber
