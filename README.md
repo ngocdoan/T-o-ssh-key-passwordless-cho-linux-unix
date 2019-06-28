@@ -10,8 +10,8 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # Phân quyền
 chmod 600 ~/.ssh/authorized_keys
 # Sửa file cấu hình trên server
-sudo vi /etc/ssh/sshd_config
-uncomment PubkeyAuthentication yes
+sudo vi /etc/ssh/sshd_config<br>
+uncomment PubkeyAuthentication yes<br>
 :wq! để lưu lại
 # Restart sshd trên mac OS
 sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
