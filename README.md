@@ -28,11 +28,11 @@ eval `ssh-agent -s`
 ssh-add -K /path/your-private-key
 # Giờ chỉ việc chạy lệnh ssh user@ip.address -p portnumber, máy sẽ ko hỏi gì mà đăng nhập luôn
 # C2: Tạo file khai báo như sau trên máy client (khi restart vẫn chạy phà phà)
-Host test1
-	HostName ip.address
-	Port portnumber
-	User username
-	PreferredAuthentications publickey
-	IdentityFile ~/.ssh/privatekey
-	IdentitiesOnly=yes
+Host test1<br>
+	HostName ip.address<br>
+	Port portnumber<br>
+	User username<br>
+	PreferredAuthentications publickey<br>
+	IdentityFile ~/.ssh/privatekey<br>
+	IdentitiesOnly=yes<br>
  # Từ giờ chỉ cần gõ ssh test1 là xong.
