@@ -19,3 +19,10 @@ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 scp -p portnumber user@ip.address:/server/patch/id_rsa /client/patch/
 # Thực hiện đăng nhập bằng key đã tải về
 ssh -i /client/patch/id_rsa user@ip.address -p portnumber
+---------------------------------------------------------------
+# nếu muốn máy client đăng nhập mà ko đường dẫn key nữa thì phải import vào keychain trên máy client 
+# Chạy import agent ssh-key
+eval `ssh-agent -s`
+# import ssh-key
+ssh-add -K /path/your-private-key
+# giờ chỉ việc chạy lệnh ssh user@ip.address -p portnumber, máy sẽ ko hỏi gì mà đăng nhập luôn
