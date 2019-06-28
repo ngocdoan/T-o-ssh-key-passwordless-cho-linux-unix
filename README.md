@@ -30,9 +30,9 @@ ssh-add -K /path/your-private-key
 # C2: Tạo file khai báo như sau trên máy client (khi restart vẫn chạy phà phà)
 Host test1<br>
 &emsp;HostName ip.address<br>
-<padding-left: 4em>Port portnumber<br>
-<padding-left: 4em>User username<br>
-<padding-left: 4em>PreferredAuthentications publickey<br>
-<padding-left: 4em>IdentityFile ~/.ssh/privatekey<br>
-<padding-left: 4em>IdentitiesOnly=yes<br>
+&emsp;Port portnumber<br>
+&emsp;User username<br>
+&emsp;PreferredAuthentications publickey<br>
+&emsp;IdentityFile ~/.ssh/privatekey<br>
+&emsp;IdentitiesOnly=yes<br>
  # Từ giờ chỉ cần gõ ssh test1 là xong.
