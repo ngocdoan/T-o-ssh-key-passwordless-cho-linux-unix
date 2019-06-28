@@ -20,9 +20,18 @@ scp -p portnumber user@ip.address:/server/patch/id_rsa /client/patch/
 # Thực hiện đăng nhập bằng key đã tải về
 ssh -i /client/patch/id_rsa user@ip.address -p portnumber
 ---------------------------------------------------------------
-# nếu muốn máy client đăng nhập mà ko đường dẫn key nữa thì phải import vào keychain trên máy client 
+# C1: nếu muốn máy client đăng nhập mà ko đường dẫn key nữa thì phải import vào keychain trên máy client (khi restart phải chạy lại list lệnh này)
 # Chạy import agent ssh-key
 eval `ssh-agent -s`
 # import ssh-key
 ssh-add -K /path/your-private-key
 # giờ chỉ việc chạy lệnh ssh user@ip.address -p portnumber, máy sẽ ko hỏi gì mà đăng nhập luôn
+# C2: Tạo file khai báo như sau trên máy client
+Host test1
+	HostName ip.address
+	Port portnumber
+	User username
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/privatekey
+	IdentitiesOnly=yes
+ # từ giờ chỉ cần gõ ssh test1 là xong.
