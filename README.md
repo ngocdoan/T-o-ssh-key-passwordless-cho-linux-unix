@@ -35,4 +35,5 @@ Host test1<br>
 &emsp;PreferredAuthentications publickey<br>
 &emsp;IdentityFile ~/.ssh/privatekey<br>
 &emsp;IdentitiesOnly=yes<br>
+# Nhớ chép private key vào đường dẫn ~/.ssh/
  # Từ giờ chỉ cần gõ ssh test1 là xong.
