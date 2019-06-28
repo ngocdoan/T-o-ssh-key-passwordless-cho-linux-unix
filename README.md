@@ -29,9 +29,9 @@ ssh-add -K /path/your-private-key
 # Giờ chỉ việc chạy lệnh ssh user@ip.address -p portnumber, máy sẽ ko hỏi gì mà đăng nhập luôn
 # C2: Tạo file khai báo như sau trên máy client (khi restart vẫn chạy phà phà)
 Host test1<br>
-&emsp;HostName ip.address<br>
-&emsp;Port portnumber<br>
-&emsp;User username<br>
+&emsp;HostName 8.8.8.8<br>
+&emsp;Port 22<br>
+&emsp;User google<br>
 &emsp;PreferredAuthentications publickey<br>
 &emsp;IdentityFile ~/.ssh/privatekey<br>
 &emsp;IdentitiesOnly=yes<br>
