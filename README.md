@@ -24,9 +24,9 @@ ssh -i /client/patch/id_rsa user@ip.address -p portnumber
 # C1: nếu muốn máy client đăng nhập mà ko đường dẫn key nữa thì phải import vào keychain trên máy client (khi restart phải chạy lại list lệnh này)
 # Chạy import agent ssh-key
 eval `ssh-agent -s`
-# import ssh-key
+# Import ssh-key
 ssh-add -K /path/your-private-key
-# giờ chỉ việc chạy lệnh ssh user@ip.address -p portnumber, máy sẽ ko hỏi gì mà đăng nhập luôn
+# Giờ chỉ việc chạy lệnh ssh user@ip.address -p portnumber, máy sẽ ko hỏi gì mà đăng nhập luôn
 # C2: Tạo file khai báo như sau trên máy client (khi restart vẫn chạy phà phà)
 Host test1
 	HostName ip.address
@@ -35,4 +35,4 @@ Host test1
 	PreferredAuthentications publickey
 	IdentityFile ~/.ssh/privatekey
 	IdentitiesOnly=yes
- # từ giờ chỉ cần gõ ssh test1 là xong.
+ # Từ giờ chỉ cần gõ ssh test1 là xong.
